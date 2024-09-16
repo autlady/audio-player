@@ -1,0 +1,125 @@
+/* Reset and base styles  */
+
+@font-face {
+    font-family: 'Poppins';
+    src: local('Poppins Regular'), local('Poppins-Regular'),
+     url('/fonts/Poppins-Regular.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Poppins';
+    src: local('Poppins Bold'), local('Poppins-Bold'),
+    url('/fonts/Poppins-Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Poppins';
+    src: local('Poppins Poppins-BoldSemiBold'), local('Poppins-SemiBold'),
+    url('/fonts/Poppins-SemiBold.woff2') format('woff2');
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Poppins';
+    src: local('Poppins Poppins-SemiBoldMedium'), local('Poppins-Medium'),
+    url('/fonts/Poppins-Medium.woff2') format('woff2');
+    font-weight: 500;
+    font-style: normal;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    font-family: "Poppins", sans-serif;
+
+    -webkit-font-smoothing: antialiased;
+}
+
+
+input,
+button,
+button:focus,
+input:focus {
+    outline: none;
+    font-family: inherit;
+}
+
+button {
+    padding: 0;
+    background-color: transparent;
+    border: none;
+    box-shadow: none;
+    cursor: pointer;
+    color: inherit;
+    font-size: inherit;
+}
+
+input[type="submit"] {
+    padding: 0;
+    cursor: pointer;
+}
+
+a {
+    display: inline-block;
+    color: inherit;
+    font-size: inherit;
+}
+
+a,
+a:hover {
+    text-decoration: none;
+}
+
+label {
+    cursor: pointer;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    padding: 0;
+    margin: 0;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+/* Grid styles */
+
+.container {
+    max-width: 1280px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-inline: 40px;
+}
+
+
+
+.h1 {
+    font-size: 50px;
+}
