@@ -10,11 +10,48 @@
 </head>
 <body>
     <header>
-        <h1 class="h1">Мой прекрасный плеер!</h1>
+        <h1 class="h1"></h1>
     </header>
-    <main>
+    <main class="main">
         <div class="container">
-            <h2 class="h2"></h2>
+            <div class="player-wrapper">
+                <div class="player">
+                    <div class="player__cover">
+                        <img src="./img/alan-walker.png" alt="cover">
+                        <div class="player__cover-label">
+                            NOW PLAYING
+                        </div>
+                    </div>
+                    <div class="player__progress-container">
+                        <div class="player__progress-timeline">
+                            <div class="progress-current">1:24</div>
+                            <div class="progress-total">2:46</div>
+                        </div>
+                        <div class="player__progress-wrapper">
+                            <div class="player__progress">
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="player__track">
+                        <div class="player__track-name">Different World</div>
+                        <div class="player__track-artist">Alan Walker, K-391 & Sofia Carson</div>
+                    </div>
+                    <div class="player__controls">
+                        <button class="btn-prev">
+                            <img src="./img/prev.png" alt="prev">
+                        </button>
+                        <button class="btn-play">
+                            <svg class="svg-play">
+                                <use href="./img/svgSprite.svg#svg-play"></use>
+                            </svg>
+                        </button>
+                        <button class="btn-next">
+                            <img src="./img/next.png" alt="next">
+                        </button>
+                    </div>
+                </div>
+            </div>
         </div>
     </main>
     <footer class="footer">

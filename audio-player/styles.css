@@ -48,6 +48,7 @@ body {
     padding: 0;
     width: 100%;
     font-family: "Poppins", sans-serif;
+    min-height: 100vh;
 
     -webkit-font-smoothing: antialiased;
 }
@@ -118,14 +119,144 @@ img {
     padding-inline: 40px;
 }
 
-
-
-.h1 {
-    text-align: center;
-    font-size: 50px;
+.main {
+    background-color: #f0f0f0;
 }
 
+.player-wrapper {
+    padding-top: 30px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+/* player */
+
+.player {
+    width: 375px;
+    border-radius: 30px 30px 80px 80px;
+    background-color: white;
+    padding-bottom: 48px;
+}
+
+.player__cover {
+    position: relative;
+    width: 375px;
+    height: 375px;
+    margin-bottom: 30px;
+
+    border-radius: 30px 30px 80px 80px;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.player__cover-label {
+    position: absolute;
+    z-index: 7;
+    top: 48px;
+    left: 187.5px;
+    transform: translateX(-50%);
+    font-weight: 700;
+    font-size: 16px;
+    text-align: center;
+    color: white;
+}
+
+.player__cover::before {
+    content: "";
+position: absolute;
+top: 0;
+bottom: 0;
+left: 0;
+right: 0;
+background-color: rgba(0, 0, 0, 0.35);
+}
+
+.player__cover img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.player__progress-container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.player__progress-timeline {
+    width: 327px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.player__progress-wrapper {
+    width: 327px;
+    margin-bottom: 12px;
+    border-radius: 24px;
+    height: 8px;
+    background-color: #e0e0e0;
+    cursor: pointer;
+}
+
+.player__progress {
+    border-radius: 24px;
+    width: 121px;
+    height: 8px;
+    background: linear-gradient(90deg, #5c42ff 0%, #8673fd 100%);
+}
+
+.player__track {
+    margin-bottom: 39px;
+}
+
+.player__track-name {
+    font-weight: 700;
+    font-size: 20px;
+    text-align: center;
+    color: #000;
+}
+
+.player__track-artist {
+    font-weight: 500;
+    font-size: 12px;
+    text-align: center;
+    color: #828282;
+}
+
+.player__controls {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.btn-play {
+    width: 80px;
+    height: 80px;
+    fill: linear-gradient(213deg, #8673fd 0%, #5c42ff 100%);
+    box-shadow: inset 4px 12px 40px 0 rgba(178, 167, 245, 0.5), 0 12px 40px 0 rgba(92, 66, 255, 0.4);
+    background-color: #5c42ff;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.svg-play {
+    width: 21px;
+    height: 28px;
+}
+
+
+
 /* footer */
+
+.footer {
+    background-color: #f0f0f0;
+}
 
 .svg-git {
     width: 25px;
