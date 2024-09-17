@@ -27,15 +27,82 @@ loadTrack(tracks[trackIndex])
 
 //play
 function playTrack() {
+    player.classList.add('play');
+    icon.src = 'img/pause.png'
     audio.play();
 }
 
 //pause
 function pauseTrack() {
+    player.classList.remove('play');
+    icon.src = 'img/play.png'
     audio.pause();
 }
 
 btnPlay.addEventListener('click', () => {
-    console.log("click");
-    playTrack();
+    const isPlaying = player.classList.contains('play');
+    if (isPlaying) {
+        pauseTrack()
+    } else {
+        playTrack();
+    }
 })
+
+//next track
+function nextTrack() {
+    trackIndex++
+
+    if (trackIndex > tracks.length - 1) {
+        trackIndex = 0;
+    }
+
+    loadTrack(tracks[trackIndex]);
+    playTrack();
+}
+
+btnNext.addEventListener('click', () => {
+    nextTrack();
+})
+
+//prev track
+function prevTrack() {
+    trackIndex--
+
+    if (trackIndex < 0) {
+        trackIndex = tracks.length - 1;
+    }
+
+    loadTrack(tracks[trackIndex]);
+    playTrack();
+}
+
+btnPrev.addEventListener('click', () => {
+    prevTrack();
+})
+
+// progress bar
+function updateProgress(e) {
+    const { duration, currentTime } = e.srcElement;
+    const progressPercent = (currentTime / duration) * 100;
+    progress.style.width = `${progressPercent}%`
+
+}
+
+audio.addEventListener('timeupdate', updateProgress)
+
+// set progress
+function setProgress(e) {
+    const width = this.clientWidth;
+    const clickX = e.offsetX;
+    const duration = audio.duration;
+
+    audio.currentTime = (clickX / width) * duration;
+
+
+}
+
+progressWrap.addEventListener('click', setProgress);
+
+// autoplay
+
+audio.addEventListener('ended', nextTrack)
