@@ -14,18 +14,28 @@ const icon = document.querySelector(".img__src");
 const tracks = ["Love and Sex and Magic", "Takie devchonki", "Dont start now"];
 
 // первый трек
-let trackIndex = 1;
+let trackIndex = 0;
 
 //init
 function loadTrack(track) {
     nameTrack.innerHTML = track
-    audio.src = 'audio/${track}.mp3'
-    img.src = './img/covers/${trackIndex + 1}.jpg'
+    audio.src = `audio/${track}.mp3`
+    img.src = `img/covers/${trackIndex + 1}.jpg`
 }
 
 loadTrack(tracks[trackIndex])
 
-//play track
-// function playTrack(track) {
+//play
+function playTrack() {
+    audio.play();
+}
 
-// }
+//pause
+function pauseTrack() {
+    audio.pause();
+}
+
+btnPlay.addEventListener('click', () => {
+    console.log("click");
+    playTrack();
+})
