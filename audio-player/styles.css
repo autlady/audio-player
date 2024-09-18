@@ -164,6 +164,15 @@ img {
     color: white;
 }
 
+.btn-sound {
+    position: absolute;
+    z-index: 7;
+    width: 25px;
+    top: 48px;
+    left: 30px;
+    cursor: pointer;
+}
+
 .player__cover::before {
     content: "";
 position: absolute;
@@ -186,7 +195,7 @@ background-color: rgba(0, 0, 0, 0.35);
     flex-direction: column;
 }
 
-.player__progress-timeline {
+.player__time {
     width: 327px;
     display: flex;
     align-items: center;

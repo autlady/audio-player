@@ -3,7 +3,7 @@ const btnPlay = document.querySelector(".btn-play");
 const btnPrev = document.querySelector(".btn-prev");
 const btnNext = document.querySelector(".btn-next");
 const audio = document.querySelector(".audio");
-const totalTime = document.querySelector(".time-total");
+const totalTime = document.querySelector(".player__time .time-total");
 const current = document.querySelector(".player__time .time-current");
 const progressWrap = document.querySelector(".player__progress-wrapper");
 const progress =  document.querySelector(".player__progress");
@@ -23,6 +23,7 @@ function loadTrack(track) {
     nameTrack.innerHTML = track
     audio.src = `audio/${track}.mp3`
     img.src = `img/covers/${trackIndex + 1}.jpg`
+    setTime()
 }
 
 loadTrack(tracks[trackIndex])
@@ -32,7 +33,7 @@ loadTrack(tracks[trackIndex])
 function setTime() {
     audio.addEventListener("loadeddata", () => {
         const audioDuration = audio.duration;
-        totalTime.innerHTML = getTimeCodeFromNum(audioDuration);
+        totalTime.textContent = getTimeCodeFromNum(audioDuration);
     })
 }
 
