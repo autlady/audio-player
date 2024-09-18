@@ -11,6 +11,8 @@ const img = document.querySelector(".player__cover-img");
 const nameTrack = document.querySelector(".player__track-name");
 const artist = document.querySelector(".player__track-artist");
 const icon = document.querySelector(".img__src");
+const volume = document.querySelector(".btn-sound");
+const volumeIcon = document.querySelector(".img__sound");
 
 // названия треков
 const tracks = ["Love and Sex and Magic", "Takie devchonki", "Dont start now"];
@@ -109,6 +111,28 @@ function prevTrack() {
 
 btnPrev.addEventListener('click', () => {
     prevTrack();
+})
+
+//sound button
+function soundOn() {
+    volumeIcon.src = 'img/sound.png'
+    player.classList.remove('muted');
+}
+
+function soundOff() {
+    volumeIcon.src = 'img/no-sound.png'
+    player.classList.add('muted');
+}
+
+volume.addEventListener('click', () => {
+    audio.muted = !audio.muted
+
+   const isSound = player.classList.contains('muted');
+    if (isSound) {
+        soundOn();
+    } else {
+        soundOff();
+    }
 })
 
 
