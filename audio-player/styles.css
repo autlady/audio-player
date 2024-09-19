@@ -40,6 +40,18 @@
 
 html {
     scroll-behavior: smooth;
+    height: 100%;
+}
+
+body {
+    /* height: 100%; */
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+body > * {
+    flex-shrink: 0;
 }
 
 html,
@@ -48,7 +60,6 @@ body {
     padding: 0;
     width: 100%;
     font-family: "Poppins", sans-serif;
-    min-height: 100vh;
 
     -webkit-font-smoothing: antialiased;
 }
@@ -121,6 +132,7 @@ img {
 
 .main {
     background-color: #f0f0f0;
+    /* min-height: 100vh; */
 }
 
 .player-wrapper {
@@ -136,18 +148,24 @@ img {
 
 .player {
     width: 375px;
+    width: 300px;
     border-radius: 30px 30px 80px 80px;
+    border-radius: 24px 24px 64px 64px;
     background-color: white;
-    padding-bottom: 48px;
+    padding-bottom: 38px;
 }
 
 .player__cover {
     position: relative;
     width: 375px;
     height: 375px;
+    width: 300px;
+    height: 300px;
     margin-bottom: 30px;
+    margin-bottom: 24px;
 
     border-radius: 30px 30px 80px 80px;
+    border-radius: 24px 24px 64px 64px;
     overflow: hidden;
     flex-shrink: 0;
 }
@@ -157,6 +175,8 @@ img {
     z-index: 7;
     top: 48px;
     left: 187.5px;
+    top: 38px;
+    left: 150px;
     transform: translateX(-50%);
     font-weight: 700;
     font-size: 16px;
@@ -170,6 +190,8 @@ img {
     width: 25px;
     top: 48px;
     left: 30px;
+    top: 38px;
+    left: 24px;
     cursor: pointer;
 }
 
@@ -197,6 +219,7 @@ img {
 
 .player__time {
     width: 327px;
+    width: 262px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -204,8 +227,11 @@ img {
 
 .player__progress-wrapper {
     width: 327px;
+    width: 262px;
     margin-bottom: 12px;
+    margin-bottom: 9px;
     border-radius: 24px;
+    border-radius: 20px;
     height: 8px;
     background-color: #e0e0e0;
     cursor: pointer;
@@ -213,6 +239,7 @@ img {
 
 .player__progress {
     border-radius: 24px;
+    border-radius: 20px;
     width: 0px;
     height: 8px;
     background: linear-gradient(90deg, #5c42ff 0%, #8673fd 100%);
@@ -220,11 +247,13 @@ img {
 
 .player__track {
     margin-bottom: 39px;
+    margin-bottom: 31px;
 }
 
 .player__track-name {
     font-weight: 700;
     font-size: 20px;
+    /* font-size: 18px; */
     text-align: center;
     color: #000;
 }
@@ -232,6 +261,7 @@ img {
 .player__track-artist {
     font-weight: 500;
     font-size: 12px;
+    /* font-size: 10px; */
     text-align: center;
     color: #828282;
 }
@@ -240,11 +270,14 @@ img {
     display: flex;
     justify-content: center;
     gap: 30px;
+    gap: 24px;
 }
 
 .btn-play {
     width: 80px;
     height: 80px;
+    width: 64px;
+    height: 64px;
     fill: linear-gradient(213deg, #8673fd 0%, #5c42ff 100%);
     box-shadow: inset 4px 12px 40px 0 rgba(178, 167, 245, 0.5), 0 12px 40px 0 rgba(92, 66, 255, 0.4);
     background-color: #5c42ff;
