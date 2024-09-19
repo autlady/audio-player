@@ -9,7 +9,7 @@ const progressWrap = document.querySelector(".player__progress-wrapper");
 const progress =  document.querySelector(".player__progress");
 const img = document.querySelector(".player__cover-img");
 const nameTrack = document.querySelector(".player__track-name");
-const artist = document.querySelector(".player__track-artist");
+const artistTrack = document.querySelector(".player__track-artist");
 const icon = document.querySelector(".img__src");
 const volume = document.querySelector(".btn-sound");
 const volumeIcon = document.querySelector(".img__sound");
@@ -17,18 +17,22 @@ const volumeIcon = document.querySelector(".img__sound");
 // названия треков
 const tracks = ["Love and Sex and Magic", "Takie devchonki", "Dont start now"];
 
+// названия исполнителей
+const artists = ["Purple Avenue", "Mumii Troll", "Dua Lipa"];
+
 // первый трек
 let trackIndex = 0;
 
 //init
-function loadTrack(track) {
+function loadTrack(track, artist) {
     nameTrack.innerHTML = track
     audio.src = `audio/${track}.mp3`
     img.src = `img/covers/${trackIndex + 1}.jpg`
+    artistTrack.innerHTML = artist
     setTime()
 }
 
-loadTrack(tracks[trackIndex])
+loadTrack(tracks[trackIndex], artists[trackIndex])
 
 
 //set time
@@ -87,7 +91,7 @@ function nextTrack() {
         trackIndex = 0;
     }
 
-    loadTrack(tracks[trackIndex]);
+    loadTrack(tracks[trackIndex], artists[trackIndex]);
     setTime();
     playTrack();
 }
@@ -104,7 +108,7 @@ function prevTrack() {
         trackIndex = tracks.length - 1;
     }
 
-    loadTrack(tracks[trackIndex]);
+    loadTrack(tracks[trackIndex], artists[trackIndex]);
     setTime();
     playTrack();
 }
